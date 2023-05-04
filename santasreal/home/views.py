@@ -13,6 +13,9 @@ home = Blueprint('home', __name__)
 
 
 def send_simple_message(_email="None@NoneYouBusiness.com", _text=None):
+    logger.info(ADMIN_EMAIL)
+    logger.info(DOMAIN_NAME)
+    logger.info(MAILGUN_API_KEY)
     return requests.post(
         f"https://api.mailgun.net/v3/{DOMAIN_NAME}/messages",
         auth=("api", MAILGUN_API_KEY),
@@ -35,7 +38,7 @@ def index_post():
     name = request.form.get('name')
     email = request.form.get('email')
     message = request.form.get('message')
-    # flash(f"Name: {name} \n Email: {email} \n Message: {message}")
+    logger.info(f"Name: {name} \n\nEmail: {email} \n\nMessage: {message}")
     sent = send_simple_message(
         _email=email,
         _text=f"Name: {name} \n\nEmail: {email} \n\nMessage: {message}"
