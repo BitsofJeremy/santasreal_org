@@ -1,0 +1,41 @@
+<!-- templates/index.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<h3 class="title is-1">
+  Message Santa Today!
+</h3>
+<!--form-->
+<div class="columns is-mobile is-multiline is-centered">
+    <div class="box">
+        <form method="POST" action="/" enctype="multipart/form-data">
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="text" name="name" placeholder="Name" autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="text" name="email" placeholder="Email: " autofocus="">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" type="text" name="message" placeholder="Message: " autofocus="">
+                </div>
+            </div>
+
+            <br/>
+            <br/>
+            <button class="button is-block is-black is-large is-fullwidth">Send Message!</button>
+        </form>
+    </div>
+</div>
+<!--end form-->
+
+
+{% endblock %}
