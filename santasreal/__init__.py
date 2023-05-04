@@ -15,7 +15,7 @@ Bootstrap(app)
 #
 
 # Import the module / component using their blueprints
-from nftgallery.home.views import home
+from santasreal.home.views import home
 
 # Register Blueprints
 app.register_blueprint(home)
