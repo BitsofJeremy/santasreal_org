@@ -40,6 +40,8 @@ def index_post():
         _email=email,
         _text=f"Name: {name} \n\nEmail: {email} \n\nMessage: {message}"
     )
+    logger.info(sent.status_code)
+    logger.info(sent.text)
     if sent.status_code == 200:
         flash("Message Sent!")
     else:
